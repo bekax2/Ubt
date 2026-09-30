@@ -1,0 +1,94 @@
+# Ubt
+Ent
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ҰБТ 140 Балл - Симулятор</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f6f9; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { text-align: center; color: #2c3e50; }
+        .question { margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #eee; }
+        .question p { font-weight: bold; }
+        .options label { display: block; margin: 5px 0; cursor: pointer; }
+        button { display: block; width: 100%; padding: 15px; background: #27ae60; color: white; border: none; font-size: 18px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #219150; }
+        #result { text-align: center; font-size: 24px; font-weight: bold; margin-top: 20px; color: #2980b9; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ҰБТ Толық Тест Симуляторы</h1>
+    <form id="quizForm">
+        
+        <h2>І. Қазақстан тарихы</h2>
+        <div class="question">
+            <p>1. Ботай мәдениетін зерттеген археолог:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) К. Ақышев</label>
+                <label><input type="radio" name="q1" value="B"> B) Ә. Марғұлан</label>
+                <label><input type="radio" name="q1" value="C"> C) В. Зайберт</label>
+                <label><input type="radio" name="q1" value="D"> D) В. Радлов</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Есік қорғанынан табылған «Алтын адамның» дәуірі:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) Гунн</label>
+                <label><input type="radio" name="q2" value="B"> B) Сақ</label>
+                <label><input type="radio" name="q2" value="C"> C) Қаңлы</label>
+                <label><input type="radio" name="q2" value="D"> D) Үйсін</label>
+            </div>
+        </div>
+
+        <h2>ІІ. Математика</h2>
+        <div class="question">
+            <p>3. Теңдеуді шешіңіз: 2x + 5 = 17</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) 5</label>
+                <label><input type="radio" name="q3" value="B"> B) 6</label>
+                <label><input type="radio" name="q3" value="C"> C) 7</label>
+                <label><input type="radio" name="q3" value="D"> D) 8</label>
+            </div>
+        </div>
+
+        <h2>ІІІ. Информатика</h2>
+        <div class="question">
+            <p>4. Python: print(23 // 5 + 23 % 5) нәтижесі неге тең?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) 4</label>
+                <label><input type="radio" name="q4" value="B"> B) 3</label>
+                <label><input type="radio" name="q4" value="C"> C) 7</label>
+                <label><input type="radio" name="q4" value="D"> D) 8</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Тестті тапсыру және нәтижені өзектілеу</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function checkAnswers() {
+    const answers = { q1: "C", q2: "B", q3: "B", q4: "C" };
+    let score = 0;
+    let total = Object.keys(answers).length;
+
+    for (let key in answers) {
+        let selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerText = "Сіздің нәтижеңіз: " + score + " / " + total;
+}
+</script>
+
+</body>
+</html>
